@@ -26,6 +26,16 @@ ambari-server-{{ambari.version}}-pkg:
     - version: {{ version_mapping.get(ambari.version) }}
 {% endif %}
 
+
+ambari-redhat-satellite:
+  file.managed:
+    - name: /var/lib/ambari-server/resources/stacks/HDP/2.0.6/configuration/cluster-env.xml
+    - source: salt://ambari/server/files/cluster-env.xml
+    - template: jinja
+    - user: {{ ambari_user }}
+    - group: root
+    - permission: 0644
+
 ambari-server-properties:
   file.managed:
     - name: /etc/ambari-server/conf/ambari.properties
