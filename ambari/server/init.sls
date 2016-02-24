@@ -11,11 +11,9 @@ include:
   {% endif %}
 
 {% if salt['grains.get']('os_family') == 'RedHat' %}
-ambari-server-{{ambari.version}}-pkg:
-  pkg.latest:
-    - name: ambari-server
-    - fromrepo: ambari-{{ ambari.version }}
-    - version: {{ ambari.version }}
+ambari-server-pkg:
+  pkg:
+      - installed
 {% endif %}
 
 {% if salt['grains.get']('os_family') == 'Debian' %}
@@ -31,33 +29,6 @@ ambari-redhat-satellite:
   file.managed:
     - name: /var/lib/ambari-server/resources/stacks/HDP/2.0.6/configuration/cluster-env.xml
     - source: salt://ambari/server/files/cluster-env.xml
-    - template: jinja
-    - user: {{ ambari_user }}
-    - group: root
-    - permission: 0644
-
-ambari-server-properties:
-  file.managed:
-    - name: /etc/ambari-server/conf/ambari.properties
-    - source: salt://ambari/server/files/ambari.properties
-    - template: jinja
-    - user: {{ ambari_user }}
-    - group: root
-    - permission: 0644
-
-ambari-server-log4j:
-  file.managed:
-    - name: /etc/ambari-server/conf/log4j.properties
-    - source: {{ ambari.server.log4j }}
-    - template: jinja
-    - user: {{ ambari_user }}
-    - group: root
-    - permission: 0644
-
-ambari-server-jass:
-  file.managed:
-    - name: /etc/ambari-server/conf/krb5JAASLogin.conf
-    - source: salt://ambari/server/files/krb5JAASLogin.conf
     - template: jinja
     - user: {{ ambari_user }}
     - group: root
