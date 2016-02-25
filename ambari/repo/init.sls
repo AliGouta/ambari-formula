@@ -2,7 +2,7 @@
 
 /etc/yum.repos.d/HDP.repo:
   file.managed:
-    - source: salt://ambari/repos/files/HDP.repo
+    - source: salt://ambari/repo/files/HDP.repo
     - template: jinja
     - user: root
     - group: root
