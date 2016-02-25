@@ -1,6 +1,6 @@
 ambari:
 
-  version: 1.7.0
+  version: 2.2.0
 
   ## Specific configuration for Ambari Agent
   agent:
@@ -24,9 +24,8 @@ ambari:
       tolerate_download_failures: true
       run_as_user: root
       parallel_execution: 0
-    command:
-      maxretries: 2
-      sleepBetweenRetries: 1
+      alert_grace_period: 5
+
     security:
       keysdir: /var/lib/ambari-agent/keys
       server_crt: ca.crt
@@ -48,7 +47,7 @@ ambari:
   server:
     ## Should the ambari server be automatically started and enabled
     ## if false, status/state unchanged
-    start_service: False
+    start_service: True
 
     # log4j template
     log4j: salt://ambari/server/files/log4j.properties

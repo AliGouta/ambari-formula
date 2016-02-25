@@ -8,11 +8,10 @@ include:
   {% endif %}
 
 {% if salt['grains.get']('os_family') == 'RedHat' %}
-ambari-agent-{{ambari.version}}-pkg:
-  pkg.uptodate:
-    - name: ambari-agent
-    - fromrepo: ambari-{{ ambari.version }}
-    - version: {{ ambari.version }}
+ambari-server-pkg:
+  pkg.installed:
+      - pkgs:
+        - ambari-agent
 {% endif %}
 
 {% if salt['grains.get']('os_family') == 'Debian' %}
@@ -23,7 +22,7 @@ ambari-agent-{{ambari.version}}-pkg:
     - version: {{ version_mapping.get(ambari.version) }}
 {% endif %}
 
-ambari-agent-{{ambari.version}}-config:
+ambari-agent-config:
   file.managed:
     - name: /etc/ambari-agent/conf/ambari-agent.ini
     - source: salt://ambari/agent/files/ambari-agent.ini
@@ -33,6 +32,6 @@ ambari-agent-{{ambari.version}}-config:
     - group: root
     - makedirs: True
     - require_in:
-      - pkg: ambari-agent-{{ambari.version}}-pkg
+      - pkg: ambari-agent-pkg
 
 
