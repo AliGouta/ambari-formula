@@ -3,7 +3,7 @@
 hdp-repos:
   cp.get_file:
     - path: salt://ambari/repos/files/HDP.repo
-    - dest: /etc/yum.repos.d/HDP.repo
+    - dest: /etc/yum.repos.d
 
 hdp-utils-repos:
   file.managed:
