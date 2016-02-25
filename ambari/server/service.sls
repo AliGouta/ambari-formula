@@ -8,6 +8,6 @@ ambari-server-svc:
     - name: ambari-server
     - enable: True
     - require_in:
-      - pkg: ambari-server-{{ambari.version}}-pkg
+      - pkg: ambari-server-pkg
     - watch:
       - file: ambari-server-properties
