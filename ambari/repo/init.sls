@@ -1,13 +1,9 @@
 {% if salt['grains.get']('os_family') == 'RedHat' %}
 
 hdp-repos:
-  file.managed:
-    - name: /etc/yum.repos.d/HDP.repo
-    - source: salt://ambari/repos/files/HDP.repo
-    - template: jinja
-    - user: root
-    - group: root
-    - permission: 0644
+  cp.get_file:
+    - path: salt://ambari/repos/files/HDP.repo
+    - dest: /etc/yum.repos.d/HDP.repo
 
 hdp-utils-repos:
   file.managed:
