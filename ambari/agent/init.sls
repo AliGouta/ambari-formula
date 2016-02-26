@@ -33,6 +33,6 @@ ambari-agent-config:
     - group: root
     - makedirs: True
     - require_in:
-      - pkg: ambari-agent-pkg
+      - pkg: ambari-server-pkg
 
 
