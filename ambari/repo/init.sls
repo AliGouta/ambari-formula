@@ -8,10 +8,9 @@
     - group: root
     - permission: 0644
 
-hdp-utils-repos:
+/etc/yum.repos.d/HDP-UTILS.repo:
   file.managed:
-    - name: /etc/yum.repos.d/HDP-UTILS.repo
-    - source: salt://ambari/repos/files/HDP-UTILS.repo
+    - source: salt://ambari/repo/files/HDP-UTILS.repo
     - template: jinja
     - user: root
     - group: root
