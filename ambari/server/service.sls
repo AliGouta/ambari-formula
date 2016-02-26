@@ -9,3 +9,4 @@ ambari-server-svc:
     - enable: True
     - require_in:
       - pkg: ambari-server-pkg
+      - sls: ambari.server.setup
