@@ -1,5 +1,6 @@
 {# Load default settings #}
 {% import_yaml 'ambari/defaults.yaml' as default_settings %}
+{% import_yaml 'ambari/sys_defaults.yaml' as sys_default_settings %}
 
 {# Need some more precise version numbers for Debian packages #}
 {% set version_mapping = salt['grains.filter_by']({
@@ -29,3 +30,5 @@
 
 {# Load specific pillar and use defaults for non-overriden elements #}
 {% set ambari = salt['pillar.get']('ambari', default=default_settings.ambari, merge=True ) %}
+
+{% set sys = salt['pillar.get']('sys', default=sys_default_settings.yum, merge=True ) %}

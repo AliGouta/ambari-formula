@@ -9,7 +9,7 @@ ambari:
     start_service: True
     ## All of the following is used for /etc/ambari-agent/conf/ambari-agent.ini
     server:
-      hostname: localhost
+      hostname: macvlii00954.xmp.net.intra
       url_port: 8440
       secured_url_port: 8441
     agent:

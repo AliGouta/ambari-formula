@@ -10,6 +10,7 @@ include:
   {% if ambari.server.start_service %}
   - ambari.server.service
   {% endif %}
+  - ambari.common
 
 {% if salt['grains.get']('os_family') == 'RedHat' %}
 ambari-server-pkg:
