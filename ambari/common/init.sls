@@ -2,7 +2,7 @@
 
 yum-cache-config:
   file.managed:
-    - name: /etc/yum.reposd/yum.conf
+    - name: /etc/yum.conf
     - source: salt://ambari/common/files/yum.conf
     - template: jinja
     - mode: 0644
