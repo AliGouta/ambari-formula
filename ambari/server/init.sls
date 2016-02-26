@@ -31,7 +31,6 @@ ambari-redhat-satellite:
   file.managed:
     - name: /var/lib/ambari-server/resources/stacks/HDP/2.0.6/configuration/cluster-env.xml
     - source: salt://ambari/server/files/cluster-env.xml
-    - template: jinja
     - user: root
     - group: root
     - permission: 0644
