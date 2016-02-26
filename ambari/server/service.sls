@@ -8,6 +8,6 @@ ambari-server-svc:
   service.running:
     - name: ambari-server
     - enable: True
-    - require_in:
+    - require:
       - pkg: ambari-server-pkg
       - sls: ambari.server.setup
