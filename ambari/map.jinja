@@ -31,4 +31,4 @@
 {# Load specific pillar and use defaults for non-overriden elements #}
 {% set ambari = salt['pillar.get']('ambari', default=default_settings.ambari, merge=True ) %}
 
-{% set sys = salt['pillar.get']('sys', default=sys_default_settings.yum, merge=True ) %}
+{% set sys = salt['pillar.get']('sys', default=sys_default_settings.sys, merge=True ) %}
