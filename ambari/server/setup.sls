@@ -7,5 +7,5 @@ ambari-server-setup:
   cmd.running:
     - name: ambari-server setup -s
     - require_in:
-      - pkg: ambari-server-pkg
+      - pkg: ambari-server
       - file: ambari-redhat-satellite
