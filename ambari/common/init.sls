@@ -1,6 +1,5 @@
 {% from 'ambari/map.jinja' import sys with context %}
 
-
 yum-cache-config:
   file.managed:
     - name: /etc/yum.reposd/yum.conf

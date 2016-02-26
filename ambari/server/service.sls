@@ -2,6 +2,7 @@
 
 include:
   - ambari.server
+  - ambari.server.setup
 
 ambari-server-svc:
   service.running:
