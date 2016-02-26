@@ -4,8 +4,8 @@ include:
   - ambari.server
 
 ambari-server-setup:
-  cmd.running:
+  cmd.run:
     - name: ambari-server setup -s
     - require_in:
-      - pkg: ambari-server
+      - pkg: ambari-server-pkg
       - file: ambari-redhat-satellite
