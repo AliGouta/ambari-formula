@@ -8,6 +8,6 @@ ambari-agent-svc:
     - name: ambari-agent
     - enable: True
     - require:
-      - pkg: ambari-agent-{{ambari.version}}-pkg
+      - pkg: ambari-agent-pkg
     - watch:
-      - file: ambari-agent-{{ambari.version}}-config
+      - file: ambari-agent-config

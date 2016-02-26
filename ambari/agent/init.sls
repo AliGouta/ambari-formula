@@ -3,6 +3,7 @@
 
 include:
   - ambari.repo
+  - ambari.common
   {% if ambari.agent.start_service %}
   - ambari.agent.service
   {% endif %}
