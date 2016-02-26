@@ -8,4 +8,4 @@ ambari-server-setup:
     - name: ambari-server setup -s
     - require_in:
       - pkg: ambari-server-pkg
-      - file: ambari-server-satellite
+      - file: ambari-redhat-satellite
