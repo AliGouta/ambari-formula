@@ -8,4 +8,4 @@ ambari-server-svc:
     - name: ambari-server
     - enable: True
     - require:
-      - sls: setup.sls
+      - sls: ambari.server.setup.sls
