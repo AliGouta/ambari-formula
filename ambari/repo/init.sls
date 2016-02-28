@@ -15,4 +15,21 @@
     - user: root
     - group: root
     - permission: 0644
+
+/etc/yum.repos.d/ambari.repo:
+  file.managed:
+    - source: salt://ambari/repo/files/ambari.repo
+    - template: jinja
+    - user: root
+    - group: root
+    - permission: 0644
+
+/etc/yum.repos.d/elasticsearch.repo:
+  file.managed:
+    - source: salt://ambari/repo/files/elasticsearch.repo
+    - template: jinja
+    - user: root
+    - group: root
+    - permission: 0644
+
 {% endif %}

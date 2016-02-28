@@ -3,7 +3,6 @@
 
 include:
   - ambari.repo
-  - ambari.common
   {% if ambari.agent.start_service %}
   - ambari.agent.service
   {% endif %}
@@ -22,6 +21,15 @@ ambari-agent-{{ambari.version}}-pkg:
     - fromrepo: Ambari
     - version: {{ version_mapping.get(ambari.version) }}
 {% endif %}
+
+remove-snappy:
+  pkg.removed:
+    - name: snappy
+
+install-snappy-devel:
+  pkg.installed:
+    - name: snappy-devel
+
 
 ambari-agent-config:
   file.managed:
