@@ -2,7 +2,7 @@
 {% set hgroups = hdpconfig.hostgroups %}
 
     "host_groups": [
-      {% for option, versions in hgroups.iteritems() %}
+      {% for option, versions in hdpconfig.iteritems() %}
         {{ option }} ==> {{ versions }}
 
       {%- endfor -%}
