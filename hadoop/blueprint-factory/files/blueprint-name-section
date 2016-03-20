@@ -4,4 +4,3 @@
         "stack_name": "{{ hdpconfig.blueprint.stack_name }}",
         "stack_version": "{{ hdpconfig.blueprint.stack_version }}"
     }
-}
