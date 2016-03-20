@@ -4,9 +4,15 @@
   "blueprint": "{{ hdpconfig.blueprint.clustername }}",
   "default_password": "admin",
   "host_groups": [
-    {% for hostgroup in hdpconfig['hostgroups'].iteritems() %}{
-      {{ hostgroup }}
-    }{% if not loop.last %},
+    {% for hostgroup_key, hostgroup_value in hdpconfig['hostgroups'].iteritems() %}{
+      "hosts": [
+        {% for fqdn in hostgroup_value['fqdns'] %}{
+          "fqdn": "{{ fqdn }}"
+        }{% if not loop.last %},
+        {% endif %}{% endfor %}
+        ],
+        "name": "{{ hostgroup_value.name }}"
+      }{% if not loop.last %},
     {% endif %}{% endfor %}
   ]
 }
