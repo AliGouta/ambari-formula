@@ -6,7 +6,7 @@
   "host_groups": [
     {% for hostgroup in hdpconfig['hostgroups'].iteritems() %}{
       "hosts": [
-      {% for fqdn in hostgroup.fqdns %}{
+      {% for fqdn in hostgroup['fqdns'] %}{
         "fqdn": "{{ fqdn }}"
       }{% if not loop.last %},
       {% endif %}{% endfor %}
