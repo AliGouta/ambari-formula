@@ -2,19 +2,17 @@
 
     "host_groups": [
       {% for option, versions in hdpconfig.iteritems() %}
-        {% for version, info in versions.iteritems() %}
-           {
+        {% for version, info in versions.iteritems() %}{
              "name": "{{ info.name }}",
              "configurations": [],
              "components":[
              {% for field in info['components'] %}
-             {
-               "name": "{{ field }}"
-             }{% if not loop.last %},{% endif %}
+               {
+                 "name": "{{ field }}"
+               }{% if not loop.last %},{% endif %}
              {% endfor %}
              ],
              "cardinality": "{{ info.cardinality }}"
            }{% if not loop.last %},{% endif %}
         {% endfor %}
-      {% endfor %}
-     ],
+      {% endfor %}],

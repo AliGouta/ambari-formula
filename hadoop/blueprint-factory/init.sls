@@ -25,4 +25,5 @@ blueprint-factory:
       - salt://hadoop/blueprint-factory/conf/storm.conf
       - salt://hadoop/blueprint-factory/conf/webhcat.conf
       - salt://hadoop/blueprint-factory/conf/zookeeper.conf
+      - salt://hadoop/blueprint-factory/files/blueprint-config-end-section
       - salt://hadoop/blueprint-factory/files/blueprint-hostgroup-section
