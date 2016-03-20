@@ -4,16 +4,8 @@
     "host_groups": [
       {% for option, versions in hostgps.iteritems() %}
         {%- for version, info in versions.iteritems() -%}
-           {
-             "name": "{{ info.name }}",
-             "configurations": [],
-             "components":[{% for field in info['components'] %}
-               {
-                 "name": "{{ field }}"
-               }{% if not loop.last %},{%- endif -%}
-             {% endfor %}
-             ],
-             "cardinality": "{{ info.cardinality }}"
+           {  {{ version }} ==> {{ info }}
+
            }{% if not loop.last %},{% endif %}
         {% endfor %}
       {%- endfor -%}
