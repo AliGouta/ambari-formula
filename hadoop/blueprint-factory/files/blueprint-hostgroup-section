@@ -1,7 +1,7 @@
 {% from 'hadoop/map.jinja' import hdpconfig with context %}
 
     "host_groups": [
-      {%- for option, versions in hdpconfig.iteritems() -%}
+      {% for option, versions in hdpconfig.iteritems() %}
         {%- for version, info in versions.iteritems() -%}
            {
              "name": "{{ info.name }}",
@@ -16,5 +16,5 @@
              "cardinality": "{{ info.cardinality }}"
            }{% if not loop.last %},{% endif %}
         {% endfor %}
-      {% endfor %}
+      {%- endfor -%}
     ],
