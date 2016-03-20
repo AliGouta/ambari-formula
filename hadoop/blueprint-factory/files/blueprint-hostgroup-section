@@ -3,6 +3,7 @@
 
     "host_groups": [
       {%- for option, versions in hdpconfig['hostgroups'].iteritems() -%}
+        {
         "name": "{{ versions.name }}",
         "configurations": [],
         "components":[{% for field in versions['components'] %}
