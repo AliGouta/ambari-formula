@@ -10,11 +10,11 @@
              {% for field in info['components'] %}
              {
                "name": "{{ field }}"
-             },
+             }{% if not loop.last %},{% endif %}
              {% endfor %}
              ],
-             "cardinality": "{{ info.cardinality }}",
-           }
+             "cardinality": "{{ info.cardinality }}"
+           }{% if not loop.last %},{% endif %}
         {% endfor %}
       {% endfor %}
-     ]
+     ],
