@@ -1,15 +1,13 @@
-{%- from 'hadoop/map.jinja' import hadoop with context %}
-{# set temp = hadoop #}
-
+{% from 'hadoop/map.jinja' import hdpconfig with context %}
 
 {
-  "blueprint": "{{ hadoop.blueprint }}",
+  "blueprint": "{{ hdpconfig.blueprint.clustername }}",
   "default_password": "admin",
   "host_groups": [
-    {% for hostgroup in hadoop.host_groups %}{
+    {% for hostgroup in hdpconfig['hostgroups'].iteritems() %}{
       "hosts": [
-      {% for fqdns in hostgroup.hosts %}{
-        "fqdn": "{{ fqdns.fqdn }}"
+      {% for fqdn in hostgroup.fqdns %}{
+        "fqdn": "{{ fqdn }}"
       }{% if not loop.last %},
       {% endif %}{% endfor %}
       ],

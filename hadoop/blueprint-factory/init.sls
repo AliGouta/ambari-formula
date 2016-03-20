@@ -1,4 +1,3 @@
-{% from 'hadoop/map.jinja' import hdpconfig with context %}
 
 blueprint-factory:
   file:
@@ -28,3 +27,4 @@ blueprint-factory:
       - salt://hadoop/blueprint-factory/files/blueprint-config-end-section
       - salt://hadoop/blueprint-factory/files/blueprint-hostgroup-section
       - salt://hadoop/blueprint-factory/files/blueprint-name-section
+      - salt://hadoop/blueprint-factory/files/end-blueprint
