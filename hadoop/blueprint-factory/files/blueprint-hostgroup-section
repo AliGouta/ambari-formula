@@ -4,7 +4,7 @@
     "host_groups": [
       {% for option, versions in hostgps.iteritems() %}
         {%- for version, info in versions.iteritems() -%}
-           {  "name": "{{ version['name'] }}",
+           {  "name": "{{ info }}",
 
            }{% if not loop.last %},{% endif %}
         {% endfor %}
