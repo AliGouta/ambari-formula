@@ -7,4 +7,4 @@ blueprint-factory:
     - template: jinja
     - sources:
       - salt://hadoop/blueprint-factory/files/start-blueprint
-      - salt://hadoop/blueprint-factory/files/blueprint-start-config-section
+      - salt://hadoop/blueprint-factory/files/blueprint-config-start-section
