@@ -1,9 +1,10 @@
 
 blueprint-factory
   file:
+    - name: /tmp/file.json
     - append
     - template: jinja
-    - source:
+    - sources:
       - salt://hadoop/blueprint-factory/files/start-blueprint
       - salt://hadoop/blueprint-factory/files/blueprint-start-config-section
       - salt://hadoop/blueprint-factory/conf/base.conf
@@ -26,4 +27,3 @@ blueprint-factory
       - salt://hadoop/blueprint-factory/files/blueprint-end-hostgroup-section
       - salt://hadoop/blueprint-factory/files/blueprint-name-section
       - salt://hadoop/blueprint-factory/files/end-blueprint
-

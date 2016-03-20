@@ -1,4 +1,4 @@
 
 
-includde:
-  - haddop
+include:
+  - hadoop
