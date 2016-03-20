@@ -27,3 +27,14 @@ blueprint-factory:
       - salt://hadoop/blueprint-factory/files/blueprint-end-hostgroup-section
       - salt://hadoop/blueprint-factory/files/blueprint-name-section
       - salt://hadoop/blueprint-factory/files/end-blueprint
+
+
+
+
+      "hosts": [
+      {% for fqdn in hostgroup['fqdns'] %}{
+        "fqdn": "{{ fqdn }}"
+      }{% if not loop.last %},
+      {% endif %}{% endfor %}
+      ],
+      "name": "{{ hostgroup.name }}"

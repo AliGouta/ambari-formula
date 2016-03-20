@@ -5,13 +5,7 @@
   "default_password": "admin",
   "host_groups": [
     {% for hostgroup in hdpconfig['hostgroups'].iteritems() %}{
-      "hosts": [
-      {% for fqdn in hostgroup['fqdns'] %}{
-        "fqdn": "{{ fqdn }}"
-      }{% if not loop.last %},
-      {% endif %}{% endfor %}
-      ],
-      "name": "{{ hostgroup.name }}"
+      {{ hostgroup }}
     }{% if not loop.last %},
     {% endif %}{% endfor %}
   ]
