@@ -2,6 +2,9 @@
 
     "host_groups": [
       {% for option, versions in hdpconfig.iteritems() %}
+        {% for version, info in versions.iteritems() %}
            {{ versions }}
+           {{ version }} == {{ info }}
+        {% endfor %}
       {% endfor %}
      ]
