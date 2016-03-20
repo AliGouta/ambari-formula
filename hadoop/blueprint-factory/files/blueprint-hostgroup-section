@@ -2,7 +2,8 @@
 
     "host_groups": [
       {% for option, versions in hdpconfig.iteritems() %}
-        {% for version, info in versions.iteritems() %}{
+        {% for version, info in versions.iteritems() %}
+      {
              "name": "{{ info.name }}",
              "configurations": [],
              "components":[
