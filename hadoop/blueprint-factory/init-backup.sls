@@ -43,3 +43,9 @@ blueprint-factory:
              "cardinality": "{{ info.cardinality }}"
            }{% if not loop.last %},{% endif %}
         {% endfor %}
+
+
+          blueprint:
+    clustername: "aramcheck"
+    stack_name: "HDP"
+    stack_version: "2.3"
