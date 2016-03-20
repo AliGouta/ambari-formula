@@ -27,3 +27,19 @@ blueprint-factory:
       - salt://hadoop/blueprint-factory/files/blueprint-end-hostgroup-section
       - salt://hadoop/blueprint-factory/files/blueprint-name-section
       - salt://hadoop/blueprint-factory/files/end-blueprint
+
+
+
+        {%- for version, info in versions.iteritems() -%}
+           {
+             "name": "{{ info.name }}",
+             "configurations": [],
+             "components":[{% for field in info['components'] %}
+               {
+                 "name": "{{ field }}"
+               }{% if not loop.last %},{%- endif -%}
+             {% endfor %}
+             ],
+             "cardinality": "{{ info.cardinality }}"
+           }{% if not loop.last %},{% endif %}
+        {% endfor %}
