@@ -7,7 +7,7 @@
              "name": "{{ info.name }}",
              "configurations": [],
              "components":[
-             {% for field in info['components'] %}
+             {%- for field in info['components'] -%}
                {
                  "name": "{{ field }}"
                }{% if not loop.last %},{% endif %}
