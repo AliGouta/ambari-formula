@@ -1,6 +1,6 @@
 
 blueprint-deploy:
-  file-managed:
+  file.managed:
     - name: /tmp/file-deploy.json
     - source: salt://hadoop/blueprint-deploy/files/cluster-deploy.json
     - template: jinja
