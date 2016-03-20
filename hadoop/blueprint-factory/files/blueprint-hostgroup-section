@@ -15,4 +15,5 @@
              "cardinality": "{{ info.cardinality }}"
            }{% if not loop.last %},{% endif %}
         {% endfor %}
-      {% endfor %}],
+      {% endfor %}
+    ],
