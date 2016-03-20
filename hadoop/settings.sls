@@ -1,8 +1,8 @@
 hadoop:
   blueprint:
-    clustername: aramcheck
-    stack_name: HDP
-    stack_version: 2.3
+    clustername: "aramcheck"
+    stack_name: "HDP"
+    stack_version: "2.3"
   hostgroups:
     hostgroup1:
       name: hostgroup1
