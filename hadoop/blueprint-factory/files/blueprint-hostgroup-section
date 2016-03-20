@@ -7,9 +7,6 @@
              "name": "{{ info.name }}",
              "configurations": [],
              "components":[
-             {% for field in info['components'] %}
-               "name": "{{ field }}"
-             {% endfor %}
              ],
              "cardinality": "{{ info.cardinality }}",
            }
