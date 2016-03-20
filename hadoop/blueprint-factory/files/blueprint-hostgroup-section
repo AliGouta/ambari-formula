@@ -5,11 +5,7 @@
       {% for option, versions in hdpconfig['hostgroups'].iteritems() %}
         {%- for version, info in versions.iteritems() -%}
            {
-             {{ option }}  ==> {{ versions }}
-             ---------------
-             {{ version }} ==> {{ info }}
-
-
+             "name": "{{ name }}",
            }{% if not loop.last %},{% endif %}
         {% endfor %}
       {%- endfor -%}
