@@ -1,8 +1,8 @@
 {% from 'hadoop/map.jinja' import hdpconfig with context %}
-{% set hostgps = hdpconfig.hostgroups %}
+
 
     "host_groups": [
-      {% for option, versions in hostgps.iteritems() %}
+      {% for option, versions in hdpconfig:hostgroups.iteritems() %}
         {%- for version, info in versions.iteritems() -%}
            {
              "name": "{{ info.name }}",
