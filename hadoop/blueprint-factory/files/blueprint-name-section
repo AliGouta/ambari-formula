@@ -1,7 +1,7 @@
 {% from 'hadoop/map.jinja' import hdpconfig with context %}
-
     "Blueprints": {
         "blueprint_name": "{{ hdpconfig.blueprint.clustername }}",
         "stack_name": "{{ hdpconfig.blueprint.stack_name }}",
         "stack_version": "{{ hdpconfig.blueprint.stack_version }}"
     }
+}

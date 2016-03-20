@@ -1,5 +1,4 @@
 {% from 'hadoop/map.jinja' import hdpconfig with context %}
-
     "host_groups": [
       {%- for option, versions in hdpconfig['hostgroups'].iteritems() -%}
         {
