@@ -28,7 +28,9 @@ blueprint-factory:
       - salt://hadoop/blueprint-factory/files/blueprint-name-section
       - salt://hadoop/blueprint-factory/files/end-blueprint
 
-"name": "{{ info.name }}",
+
+
+             "name": "{{ info.name }}",
              "configurations": [],
              "components":[{% for field in info['components'] %}
                {
