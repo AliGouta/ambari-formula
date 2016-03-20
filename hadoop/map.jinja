@@ -1,3 +1,3 @@
-{% import_yaml 'hadoop/settings.yaml' as default_settings %}
+{% import_yaml 'hadoop/settings.sls' as default_settings %}
 
 {%- set hdpconfig = salt['pillar.get']('hadoop:hostgroups', default=default_settings %}

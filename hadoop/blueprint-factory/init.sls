@@ -1,5 +1,6 @@
+{% from 'hadoop/map.jinja' import hdpconfig with context %}
 
-blueprint-factory
+blueprint-factory:
   file.append:
     - name: /tmp/file.json
     - template: jinja
