@@ -1,4 +1,5 @@
 
 
 include:
-  - hadoop
+  - hadoop.blueprint-factory
+  - hadoop.blueprint-deploy
