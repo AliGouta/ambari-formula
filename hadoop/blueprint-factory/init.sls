@@ -1,7 +1,6 @@
 
 blueprint-factory
-  file:
-    - append
+  fil.append:
     - name: /tmp/file.json
     - template: jinja
     - sources:
