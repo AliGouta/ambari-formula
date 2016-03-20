@@ -3,11 +3,12 @@
     "host_groups": [
       {% for option, versions in hdpconfig.iteritems() %}
         {% for version, info in versions.iteritems() %}
-           #{{ versions }}
-           #{{ version }} == {{ info }}
            {
              "name": "{{ info.name }}",
              "configurations": [],
+             {% for field in info.components.iteritems() %}
+               {{field}}
+             {% endfor %}
              "cardinality": "{{ info.cardinality }}",
            }
         {% endfor %}
