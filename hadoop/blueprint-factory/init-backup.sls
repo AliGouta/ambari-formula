@@ -30,16 +30,6 @@ blueprint-factory:
 
 
 
-             "name": "{{ info.name }}",
-             "configurations": [],
-             "components":[{% for field in info['components'] %}
-               {
-                 "name": "{{ field }}"
-               }{% if not loop.last %},{%- endif -%}
-             {% endfor %}
-             ],
-             "cardinality": "{{ info.cardinality }}"
-
 
           blueprint:
     clustername: "aramcheck"

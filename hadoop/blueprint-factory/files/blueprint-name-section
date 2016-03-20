@@ -1,4 +1,4 @@
-% from 'hadoop/map.jinja' import hdpconfig with context %}
+{% from 'hadoop/map.jinja' import hdpconfig with context %}
 
     "Blueprints": {
         "blueprint_name": "{{ hdpconfig.blueprint.clustername }}",
