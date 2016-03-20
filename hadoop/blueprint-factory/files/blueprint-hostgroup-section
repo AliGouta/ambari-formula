@@ -6,7 +6,7 @@
            {
              "name": "{{ info.name }}",
              "configurations": [],
-             {% for field in info.components.iter() %}
+             {% for field in info['components'] %}
                {{field}}
              {% endfor %}
              "cardinality": "{{ info.cardinality }}",
