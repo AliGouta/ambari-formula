@@ -1,0 +1,5 @@
+    "Blueprints": {
+        "blueprint_name": "hdp-aramcheck-cluster",
+        "stack_name": "HDP",
+        "stack_version": "2.3"
+    }

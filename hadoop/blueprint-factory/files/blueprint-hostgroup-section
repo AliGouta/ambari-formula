@@ -1,0 +1,11 @@
+{% from 'hadoop/map.jinja' import hdpconfig with context %}
+
+    "host_groups": [
+
+      {% for hostgroup in hdpconfig.host_groups %}{
+
+
+      }
+      {% endfor %}
+
+     ]
