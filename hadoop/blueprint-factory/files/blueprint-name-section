@@ -1,5 +1,5 @@
     "Blueprints": {
-        "blueprint_name": "hdp-aramcheck-cluster",
-        "stack_name": "HDP",
-        "stack_version": "2.3"
+        "blueprint_name": "{{ hadoop.blueprint.clustername }}",
+        "stack_name": "{{ hadoop.blueprint.stack_name }}",
+        "stack_version": "{{ hadoop.blueprint.stack_version }}"
     }
