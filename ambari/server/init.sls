@@ -1,7 +1,7 @@
 {% from 'ambari/map.jinja' import ambari with context %}
 {% from 'ambari/map.jinja' import version_mapping with context %}
 
-#Ali edited this file
+#Ali edited this file in two steps
 # Sets which user is running ambari-server
 {% set ambari_user = ambari.server.ambari_server.user %}
 
