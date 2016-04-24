@@ -4,43 +4,14 @@
 
 ambari-repo-2.1.2.1:
   pkgrepo.managed:
-    - name: ambari-2.1.2.1
-    - humanname: ambari-2.1.2.1
-    - baseurl: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/2.x/updates/2.1.2.1
+    - name: ambari-2.2.0.0
+    - humanname: ambari-2.2.0.0
+    - baseurl: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/2.x/updates/2.2.0.0
     - gpgcheck: 1
     - gpgkey: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
     - enabled: 0
     - priority: 1
 
-ambari-repo-2.1.2:
-  pkgrepo.managed:
-    - name: ambari-2.1.2
-    - humanname: ambari-2.1.2
-    - baseurl: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/2.x/updates/2.1.2
-    - gpgcheck: 1
-    - gpgkey: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-    - enabled: 0
-    - priority: 1
-
-ambari-repo-2.1.1:
-  pkgrepo.managed:
-    - name: ambari-2.1.1
-    - humanname: ambari-2.1.1
-    - baseurl: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/2.x/updates/2.1.1
-    - gpgcheck: 1
-    - gpgkey: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-    - enabled: 0
-    - priority: 1
-
-ambari-repo-2.1:
-  pkgrepo.managed:
-    - name: ambari-2.1
-    - humanname: ambari-2.1
-    - baseurl: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/2.x/updates/2.1.0
-    - gpgcheck: 1
-    - gpgkey: http://public-repo-1.hortonworks.com/ambari/{{centos_v}}/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
-    - enabled: 0
-    - priority: 1
 
 {% if  salt['grains.get']('osmajorrelease') < '7' %}
 {# No redhat/centos 7 releases for version earlier than 2.1 #}

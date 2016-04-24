@@ -3,16 +3,22 @@
 
 include:
   - ambari.repo
-  {% if ambari.agent.start_service %}
-  - ambari.agent.service
-  {% endif %}
 
 {% if salt['grains.get']('os_family') == 'RedHat' %}
-ambari-agent-{{ambari.version}}-pkg:
-  pkg.uptodate:
-    - name: ambari-agent
-    - fromrepo: ambari-{{ ambari.version }}
-    - version: {{ ambari.version }}
+ambari-agent:
+  pkg:
+    - installed
+  service:
+    - running
+    - enable: True
+    - require:
+      - pkg: ambari-agent
+
+#ambari-agent-{{ambari.version}}-pkg:
+#  pkg.latest:
+#    - name: ambari-agent
+#    - fromrepo: ambari-{{ ambari.version }}
+#    - version: {{ ambari.version }}
 {% endif %}
 
 {% if salt['grains.get']('os_family') == 'Debian' %}
@@ -22,17 +28,4 @@ ambari-agent-{{ambari.version}}-pkg:
     - fromrepo: Ambari
     - version: {{ version_mapping.get(ambari.version) }}
 {% endif %}
-
-ambari-agent-{{ambari.version}}-config:
-  file.managed:
-    - name: /etc/ambari-agent/conf/ambari-agent.ini
-    - source: salt://ambari/agent/files/ambari-agent.ini
-    - template: jinja
-    - mode: 0640
-    - user: root
-    - group: root
-    - makedirs: True
-    - require_in:
-      - pkg: ambari-agent-{{ambari.version}}-pkg
-
 

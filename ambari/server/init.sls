@@ -7,24 +7,12 @@
 
 include:
   - ambari.repo
-  {% if ambari.server.start_service %}
-  - ambari.server.service
-  {% endif %}
 
 {% if salt['grains.get']('os_family') == 'RedHat' %}
 ambari-server-pkg:
   pkg:
       - installed
 {% endif %}
-
-{% if salt['grains.get']('os_family') == 'Debian' %}
-ambari-server-{{ambari.version}}-pkg:
-  pkg.installed:
-    - name: ambari-server
-    - fromrepo: Ambari
-    - version: {{ version_mapping.get(ambari.version) }}
-{% endif %}
-
 
 ambari-redhat-satellite:
   file.managed:
